@@ -14,6 +14,7 @@ $meta['display']       = array('multicheckbox',
 $meta['translateui']   = array('onoff');
 $meta['redirectstart'] = array('onoff');
 $meta['checkage']      = array('onoff');
+$meta['translatesb']   = array('onoff');
 $meta['about']         = array('string','_pattern' => '/^(|[\w:\-]+)$/');
 $meta['localabout']    = array('onoff');
 

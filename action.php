@@ -57,6 +57,9 @@ class action_plugin_translation extends DokuWiki_Action_Plugin {
                     $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'setJsCacheKey');
             }
         }
+        if($this->getConf('translatesb')){
+            $controller->register_hook('DOKUWIKI_STARTED', 'BEFORE', $this, 'translate_sidebar');
+        }
         $controller->register_hook('SEARCH_QUERY_PAGELOOKUP', 'AFTER', $this, 'translation_search');
     }
 
@@ -105,6 +108,16 @@ class action_plugin_translation extends DokuWiki_Action_Plugin {
         }
         $conf['lang'] = $lc;
         $event->data = $lc;
+    }
+
+    function translate_sidebar(&$event, $args){
+        global $ID;
+        global $conf;
+
+        $lc = $this->hlp->getLangPart($ID);
+        if($lc && page_exists($lc.':'.$conf['sidebar'])){
+            $conf['sidebar'] = $lc.':'.$conf['sidebar'];
+        }
     }
 
     /**

@@ -10,6 +10,7 @@ $conf['translationns'] = '';
 $conf['skiptrans']     = '';
 $conf['dropdown']      = 0;
 $conf['translateui']   = 0;
+$conf['translatesb']   = 1;
 $conf['redirectstart'] = 0;
 $conf['checkage']      = 0;
 $conf['about']         = '';
