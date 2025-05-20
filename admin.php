@@ -98,5 +98,4 @@ class admin_plugin_translation extends AdminPlugin
         }
         echo "</table>";
     }
-
 }
