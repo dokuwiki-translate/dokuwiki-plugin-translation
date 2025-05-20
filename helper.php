@@ -387,14 +387,14 @@ class helper_plugin_translation extends Plugin
         $tns = $this->getConf("translationns");
         $tdir = dirname(wikiFN("$tns:foo"));
 
-        if($namespace) {
+        if ($namespace) {
             $nns = cleanID($namespace);
             $ndir = dirname(wikiFN("$nns:foo"));
         } else {
             $ndir = $tdir;
         }
 
-        if(!str_starts_with($ndir, $tdir)) {
+        if (!str_starts_with($ndir, $tdir)) {
             throw new \RuntimeException(
                 "Given namespace $nns is not a subnamespace of the translation namespace $tns"
             );
