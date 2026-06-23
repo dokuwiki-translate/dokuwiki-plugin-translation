@@ -44,7 +44,7 @@ class remote_plugin_translation extends RemotePlugin
 
                 if (!page_exists($translID)) {
                     $status = 'missing';
-                } else if ($page['mtime'] > filemtime(wikiFN($translID))) {
+                } elseif ($page['mtime'] > filemtime(wikiFN($translID))) {
                     $status = 'outdated';
                 } else {
                     $status = '';
